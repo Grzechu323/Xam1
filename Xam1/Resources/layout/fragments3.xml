@@ -1,0 +1,92 @@
+﻿
+<RelativeLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:layout_centerHorizontal="true"
+  android:background="#76d221">
+  <TextView
+    android:text="FAP FOLDER"
+    android:layout_centerHorizontal="true"
+    android:gravity="center"
+    android:textAppearance="?android:attr/textAppearanceLarge"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/textView1" />
+  <ImageView
+    android:src="@android:drawable/ic_menu_gallery"
+    android:layout_centerHorizontal="true"
+    android:layout_width="wrap_content"
+    android:layout_height="380dp"
+    android:layout_below="@id/textView1"
+    android:id="@+id/imageView1"/>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/imageView1">
+      <Button
+            android:text="Mam 18 lat, wchodzę."
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/imageView1"
+            android:id="@+id/button7" />
+        <Button
+            android:text="Zabierz mnie stąd."
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/button7"
+            android:id="@+id/button8"/>
+    </RelativeLayout>
+    <RelativeLayout
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_centerHorizontal="true"
+      android:layout_below="@id/imageView1">
+      <Button
+        android:text="1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imageView1"
+        android:id="@+id/btnPrev" />
+      <Button
+        android:text="2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/imageView1"
+        android:layout_toRightOf="@id/btnPrev"
+        android:id="@+id/btnNext"/>
+      <Button
+        android:text="3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/btnNext"
+        android:layout_below="@id/imageView1"
+        android:id="@+id/button3" />
+      <Button
+        android:text="4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnPrev"
+        android:id="@+id/button4" />
+      <Button
+        android:text="5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnNext"
+        android:layout_toRightOf="@id/button4"
+        android:id="@+id/button5" />
+      <Button
+        android:text="6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/button3"
+        android:layout_toRightOf="@id/button5"
+        android:id="@+id/button6" />
+    </RelativeLayout>
+</RelativeLayout>
