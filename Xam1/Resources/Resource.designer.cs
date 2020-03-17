@@ -3225,9 +3225,6 @@ namespace Xam1
 			// aapt resource value: 0x7F07007C
 			public const int two = 2131165308;
 			
-			// aapt resource value: 0x7F07007D
-			public const int weew = 2131165309;
-			
 			static Drawable()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
