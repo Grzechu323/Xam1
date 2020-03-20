@@ -7,7 +7,7 @@
   android:layout_centerHorizontal="true"
   android:background="#76d221">
   <TextView
-    android:text="SAMOYEDY"
+    android:text="@string/dogs"
     android:layout_centerHorizontal="true"
     android:gravity="center"
     android:textAppearance="?android:attr/textAppearanceLarge"
@@ -27,14 +27,14 @@
         android:layout_centerHorizontal="true"
         android:layout_below="@id/imageView1">
       <Button
-            android:text="Mam 18 lat, wchodzę."
+            android:text="@string/age_permission"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_below="@id/imageView1"
             android:id="@+id/button7" />
         <Button
-            android:text="Zabierz mnie stąd."
+            android:text="@string/go_away"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
@@ -47,13 +47,13 @@
       android:layout_centerHorizontal="true"
       android:layout_below="@id/imageView1">
       <Button
-        android:text="1"
+        android:text="@string/one"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/imageView1"
         android:id="@+id/btnPrev" />
       <Button
-        android:text="2"
+        android:text="@string/two"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
@@ -61,27 +61,27 @@
         android:layout_toRightOf="@id/btnPrev"
         android:id="@+id/btnNext"/>
       <Button
-        android:text="3"
+        android:text="@string/three"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toRightOf="@id/btnNext"
         android:layout_below="@id/imageView1"
         android:id="@+id/button3" />
       <Button
-        android:text="4"
+        android:text="@string/four"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/btnPrev"
         android:id="@+id/button4" />
       <Button
-        android:text="5"
+        android:text="@string/five"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/btnNext"
         android:layout_toRightOf="@id/button4"
         android:id="@+id/button5" />
       <Button
-        android:text="6"
+        android:text="@string/six"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/button3"

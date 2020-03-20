@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="5dp"
+    android:paddingBottom="2dp"
+    android:paddingTop="2dp">
+  <LinearLayout
+      android:orientation = "horizontal"
+      android:layout_width="fill_parent"
+      android:layout_height="fill_parent"
+      android:weightSum = "100">
+    <TextView
+        android:text="First Name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight = "25"
+        android:id="@+id/wiersz" />
+    <TextView
+      android:text="Last Name"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_weight = "25"
+      android:layout_toRightOf = "@id/wiersz"
+      android:id="@+id/wiersz2" />
+    <TextView
+      android:text="Age"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_weight = "25"
+      android:layout_toRightOf = "@id/wiersz2"
+      android:id="@+id/wiersz3" />
+    <TextView
+      android:text="Gender"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_weight = "25"
+      android:layout_toRightOf = "@id/wiersz3"
+      android:id="@+id/wiersz4" />
+    </LinearLayout>
+</RelativeLayout>

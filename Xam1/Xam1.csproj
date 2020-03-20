@@ -64,7 +64,12 @@
     <Compile Include="Fragment1.cs" />
     <Compile Include="Fragment2.cs" />
     <Compile Include="Fragment3.cs" />
+    <Compile Include="Fragments\Frag2.cs" />
+    <Compile Include="Fragments\Frag1.cs" />
+    <Compile Include="LoginScreen.cs" />
     <Compile Include="MainActivity.cs" />
+    <Compile Include="MyListViewAdapter.cs" />
+    <Compile Include="Person.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -152,6 +157,17 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\two.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\listview_row.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\values\dimens.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\login_screen.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

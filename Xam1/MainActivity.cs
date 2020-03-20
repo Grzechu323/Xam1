@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Android.App;
 using Android.Locations;
 using Android.OS;
@@ -14,20 +15,77 @@ namespace Xam1
     [Activity(Label = "APKA", Theme = "@style/AppTheme", MainLauncher = false)]
     public class MainActivity : AppCompatActivity
     {
+        private Button elo;
+        private Button obrazky;
+        private Button login;
+        private CheckBox ckb1;
+        private TextView txt1;
+        private List<Person> mItems;
+        private ListView mListView;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.activity_main);
-            var elo = FindViewById<Button>(Resource.Id.elo);
-            elo.Click += Elo_Click;
-            var obrazky = FindViewById<Button>(Resource.Id.obrazky);
-            obrazky.Click += Obrazky_Click;
 
-            CheckBox ckb1 = FindViewById<CheckBox>(Resource.Id.checkBox1);
-            TextView txt1 = FindViewById<TextView>(Resource.Id.stan);
-            ckb1.Click += (o, e) =>
+            ComponentsLocalizer();
+            ActionHooker();
+            ListView();
+        }
+
+        private void ActionHooker()
+        {
+            obrazky.Click += Obrazky_Click;
+            elo.Click += Elo_Click;
+            ckb1.Click += Ckb1_Click;
+            login.Click += Login_Click;
+            mListView.ItemClick += mListView_ItemClick;
+            mListView.ItemLongClick += mListView_ItemLongClick;
+        }
+
+        private void ComponentsLocalizer()
+        {
+            elo = FindViewById<Button>(Resource.Id.elo);
+            obrazky = FindViewById<Button>(Resource.Id.obrazky);
+            login = FindViewById<Button>(Resource.Id.login);
+            ckb1 = FindViewById<CheckBox>(Resource.Id.checkBox1);
+            txt1 = FindViewById<TextView>(Resource.Id.stan);
+            mListView = FindViewById<ListView>(Resource.Id.listView1);
+        }
+
+        private void ListView()
+        {
+            mItems = new List<Person>();
+            mItems.Add(new Person(){FirstName = "Frank", LastName = "Lampard", Age = "42", Gender = "Male"});
+            mItems.Add(new Person() { FirstName = "Jody", LastName = "Morris", Age = "44", Gender = "Male" });
+            mItems.Add(new Person() { FirstName = "Jessica", LastName = "Biel", Age = "30", Gender = "Female" });
+            /*mItems = new List<Person>();
+            mItems.Add("Frank Lampard");
+            mItems.Add("Jody Morris");
+            mItems.Add("John Terry");*/
+            //ArrayAdapter<string> adapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItem1, mItems);
+            //Nie potrzebujemy powyższego adaptera (tut2), jeśli korzystamy z poniższego kodu.
+            MyListViewAdapter adapter = new MyListViewAdapter(this,mItems);
+            
+            //string indexerTest = adapter.mItems[1]; //Powinno rzucić Jody Morrisa. Adapter można wykorzystać jak listę w innym miejscu (wyciąga indeks z listy).
+
+            mListView.Adapter = adapter;
+            
+        }
+
+        private void Elo_Click(object sender, EventArgs e)
+        {
+            Toast.MakeText(this, "No siema, mordo. Co tam?", ToastLength.Long).Show();
+        }
+
+        private void Obrazky_Click(object sender, EventArgs e)
+        {
+            Finish();
+            StartActivity(typeof(Fragment3));
+        }
+        private void Ckb1_Click(object sender, EventArgs e)
+        {
             {
                 if (ckb1.Checked)
                 {
@@ -43,15 +101,18 @@ namespace Xam1
             };
         }
 
-        private void Elo_Click(object sender, EventArgs e)
-            {
-                Toast.MakeText(this, "No siema, mordo. Co tam?", ToastLength.Long).Show();
-            }
-
-        private void Obrazky_Click(object sender, EventArgs e)
+        private void Login_Click(object sender, EventArgs e)
         {
             Finish();
-            StartActivity(typeof(Fragment3));
+            StartActivity(typeof(LoginScreen));
+        }
+        private void mListView_ItemLongClick(object sender, AdapterView.ItemLongClickEventArgs e)
+        {
+            Console.WriteLine(mItems[e.Position].LastName);
+        }
+        private void mListView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
+        {
+            Console.WriteLine(mItems[e.Position].FirstName);
         }
 
 

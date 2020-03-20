@@ -1,4 +1,13 @@
 <resources>
-    <string name="app_name">Xam1</string>
-    <string name="action_settings">Settings</string>
+  <string name="app_name">Xam1</string>
+  <string name="action_settings">Settings</string>
+  <string name="dogs">SAMOYEDY</string>
+  <string name="age_permission">Mam 18 lat, wchodzę.</string>
+  <string name="go_away">Zabierz mnie stąd.</string>
+  <string name="one">1</string>
+  <string name="two">2</string>
+  <string name="three">3</string>
+  <string name="four">4</string>
+  <string name="five">5</string>
+  <string name="six">6</string>
 </resources>
