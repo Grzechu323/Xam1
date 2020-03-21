@@ -18,7 +18,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight = "20"
-            android:textColor = "#368DEB"
+            android:textColor = "#FF6666"
             android:id="@+id/txtCreateAccount"
             android:gravity = "center"
             android:textStyle = "bold"
@@ -29,6 +29,8 @@
             android:layout_height="0dp"
             android:layout_weight = "15"
             android:id="@+id/btnSignIn"
+            android:background="@drawable/ButtonSignInStyle"
+            android:textColor="#FFFFFF"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:textSize = "15sp"/>
@@ -43,14 +45,15 @@
             android:textStyle = "bold"
             android:id="@+id/txtOr" />
         <Button
-          android:text="Sign Up With E-Mail"
-          android:layout_width="match_parent"
-          android:layout_height="0dp"
-          android:layout_weight = "15"
-          android:id="@+id/btnSignUp"
-          android:layout_marginLeft="20dp"
-          android:layout_marginRight="20dp"
-          android:textSize = "15sp"/>
+            android:text="Sign Up With E-Mail"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight = "15"
+            android:id="@+id/btnSignUp"
+            android:background="@drawable/ButtonSignUpStyle"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:textSize = "15sp"/>
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -61,6 +64,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/progressBar1" 
+                android:background="@drawable/ProgressBarStyle"
                 android:layout_centerInParent = "true"
                 android:indeterminate = "true"/>
         </RelativeLayout>
