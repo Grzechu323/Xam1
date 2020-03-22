@@ -8,6 +8,7 @@ using Android.Arch.Lifecycle;
 using Android.OS;
 using Android.Support.V7.App;
 using Android.Widget;
+using Xam1.Fragments;
 
 namespace Xam1
 {
@@ -25,6 +26,14 @@ namespace Xam1
 
             ComponentsLocalizer();
             ActionHooker();
+
+            /*btnSignUp += (object sender, EventArgs args) =>
+            {
+                //Pull up dialog
+                FragmentTransaction transaction = FragmentManager.BeginTransaction();
+                Dialog_SignUp signUpDialog = new Dialog_SignUp();
+                signUpDialog.Show(transaction, "dialog fragment");
+            };*/
         }
 
         private void ActionHooker()
@@ -45,7 +54,11 @@ namespace Xam1
         }
         private void BtnSignUp_Click(object sender, EventArgs e)
         {
-            Toast.MakeText(this, "Chuja sie zarejestrujesz, makaroniarzu", ToastLength.Short).Show();
+            //Toast.MakeText(this, "Chuja sie zarejestrujesz, makaroniarzu", ToastLength.Short).Show();
+            //Poniższy kod odpala okno dialogowe. Powyższy - wiadomo.
+            FragmentTransaction transaction = FragmentManager.BeginTransaction();
+            Dialog_SignUp signUpDialog = new Dialog_SignUp();
+            signUpDialog.Show(transaction, "dialog fragment");
         }
     }
 }
