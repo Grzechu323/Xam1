@@ -7,7 +7,9 @@ using Android.App;
 using Android.Arch.Lifecycle;
 using Android.OS;
 using Android.Support.V7.App;
+using Android.Views;
 using Android.Widget;
+using Java.Lang;
 using Xam1.Fragments;
 
 namespace Xam1
@@ -15,19 +17,20 @@ namespace Xam1
     [Activity(Label = "APKA", Theme = "@style/AppTheme", MainLauncher = false)]
     public class LoginScreen : AppCompatActivity
     {
-        private Button btnSignIn;
-        private Button btnSignUp;
-        protected override void OnCreate(Bundle savedInstanceState)
+        private Button mBtnSignIn;
+        private Button mBtnSignUp;
+        private ProgressBar mProgressBar;
+        protected override void OnCreate(Bundle bundle)
         {
-            base.OnCreate(savedInstanceState);
-            Xamarin.Essentials.Platform.Init(this, savedInstanceState);
+            base.OnCreate(bundle);
+            //Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.login_screen);
 
             ComponentsLocalizer();
             ActionHooker();
-
-            /*btnSignUp += (object sender, EventArgs args) =>
+            mProgressBar.Visibility = ViewStates.Invisible;
+            /*mBtnSignUp.Click += (object sender, EventArgs args) =>
             {
                 //Pull up dialog
                 FragmentTransaction transaction = FragmentManager.BeginTransaction();
@@ -38,14 +41,15 @@ namespace Xam1
 
         private void ActionHooker()
         {
-            btnSignIn.Click += BtnSignIn_Click;
-            btnSignUp.Click += BtnSignUp_Click;
+            mBtnSignIn.Click += BtnSignIn_Click;
+            mBtnSignUp.Click += BtnSignUp_Click;
         }
 
         private void ComponentsLocalizer()
         {
-            btnSignIn = FindViewById<Button>(Resource.Id.btnSignIn);
-            btnSignUp = FindViewById<Button>(Resource.Id.btnSignUp);
+            mBtnSignIn = FindViewById<Button>(Resource.Id.btnSignIn);
+            mBtnSignUp = FindViewById<Button>(Resource.Id.btnSignUp);
+            mProgressBar = FindViewById<ProgressBar>(Resource.Id.progressBar1);
         }
 
         private void BtnSignIn_Click(object sender, EventArgs e)
@@ -59,6 +63,19 @@ namespace Xam1
             FragmentTransaction transaction = FragmentManager.BeginTransaction();
             Dialog_SignUp signUpDialog = new Dialog_SignUp();
             signUpDialog.Show(transaction, "dialog fragment");
+
+            signUpDialog.mOnSignUpComplete += signUpDialog_mOnSignUpComplete;
+        }
+        void signUpDialog_mOnSignUpComplete(object sender, OnSignUpEventArgs e)
+        {
+            mProgressBar.Visibility = ViewStates.Visible;
+            Thread thread = new Thread(ActLikeRequest);
+            thread.Start();
+        }
+        private void ActLikeRequest()
+        {
+            Thread.Sleep(3000);
+            RunOnUiThread((() => { mProgressBar.Visibility = ViewStates.Invisible;}));
         }
     }
 }

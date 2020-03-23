@@ -18,6 +18,7 @@ namespace Xam1
         private Button elo;
         private Button obrazky;
         private Button login;
+        private Button test;
         private CheckBox ckb1;
         private TextView txt1;
         private List<Person> mItems;
@@ -40,6 +41,7 @@ namespace Xam1
             elo.Click += Elo_Click;
             ckb1.Click += Ckb1_Click;
             login.Click += Login_Click;
+            test.Click += Test_Click;
             mListView.ItemClick += mListView_ItemClick;
             mListView.ItemLongClick += mListView_ItemLongClick;
         }
@@ -49,6 +51,7 @@ namespace Xam1
             elo = FindViewById<Button>(Resource.Id.elo);
             obrazky = FindViewById<Button>(Resource.Id.obrazky);
             login = FindViewById<Button>(Resource.Id.login);
+            test = FindViewById<Button>(Resource.Id.test);
             ckb1 = FindViewById<CheckBox>(Resource.Id.checkBox1);
             txt1 = FindViewById<TextView>(Resource.Id.stan);
             mListView = FindViewById<ListView>(Resource.Id.listView1);
@@ -83,6 +86,12 @@ namespace Xam1
         {
             Finish();
             StartActivity(typeof(Fragment3));
+        }
+
+        private void Test_Click(object sender, EventArgs e)
+        {
+            Finish();
+            StartActivity(typeof(SlidingTabsTut));
         }
         private void Ckb1_Click(object sender, EventArgs e)
         {
