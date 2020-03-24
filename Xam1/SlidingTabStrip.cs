@@ -47,7 +47,7 @@ namespace Xam1
         private SimpleTabColorizer mDefaultTabColorizer;
 
         //Constructors
-        public SlidingTabStrip (Context context) : this(context, null)
+        public SlidingTabStrip(Context context) : this(context, null)
         {
 
         }
@@ -63,14 +63,14 @@ namespace Xam1
             mDefaultTabColorizer = new SimpleTabColorizer();
             mDefaultTabColorizer.IndicatorColors = INDICATOR_COLORS;
             mDefaultTabColorizer.DividerColors = DIVIDER_COLORS;
-            mBottomBorderThickness = (int) (DEFAULT_BOTTOM_BORDER_THICKNESS_DIPS * density);
+            mBottomBorderThickness = (int)(DEFAULT_BOTTOM_BORDER_THICKNESS_DIPS * density);
             mBottomBorderPaint = new Paint();
             mBottomBorderPaint.Color = GetColorFromInteger(0xC5C5C5); //Grey
-            mSelectedIndicatorThickness = (int) (SELECTED_INDICATOR_THICKNESS_DIPS * density);
+            mSelectedIndicatorThickness = (int)(SELECTED_INDICATOR_THICKNESS_DIPS * density);
             mSelectedIndicatorPaint = new Paint();
             mDividerHeight = DEFAULT_DIVIDER_HEIGHT;
             mDividerPaint = new Paint();
-            mDividerPaint.StrokeWidth = (int) (DEFAULT_DIVIDER_THICKNESS_DIPS * density);
+            mDividerPaint.StrokeWidth = (int)(DEFAULT_DIVIDER_THICKNESS_DIPS * density);
         }
 
         public SlidingTabScrollView.TabColorizer CustomTabColorizer
@@ -119,7 +119,7 @@ namespace Xam1
         {
             int height = Height;
             int tabCount = ChildCount;
-            int dividerHeightPx = (int) (Math.Min(Math.Max(0f, mDividerHeight), 1f) * height);
+            int dividerHeightPx = (int)(Math.Min(Math.Max(0f, mDividerHeight), 1f) * height);
             SlidingTabScrollView.TabColorizer tabColorizer = mCustomTabColorizer != null ? mCustomTabColorizer : mDefaultTabColorizer;
             //Grube podkreślenie pod obecnym fragmentem
             if (tabCount > 0)
@@ -138,8 +138,8 @@ namespace Xam1
                     }
 
                     View nextTitle = GetChildAt(mSelectedPosition + 1);
-                    left = (int) (mSelectionOffset * nextTitle.Left + (1.0f - mSelectionOffset) * left);
-                    right = (int) (mSelectionOffset * nextTitle.Right + (1.0f - mSelectionOffset) * right);
+                    left = (int)(mSelectionOffset * nextTitle.Left + (1.0f - mSelectionOffset) * left);
+                    right = (int)(mSelectionOffset * nextTitle.Right + (1.0f - mSelectionOffset) * right);
                 }
 
                 mSelectedIndicatorPaint.Color = GetColorFromInteger(color);
@@ -163,7 +163,7 @@ namespace Xam1
             float r = (Color.GetRedComponent(color1) * ratio) + (Color.GetRedComponent(color2) * inverseRatio);
             float g = (Color.GetGreenComponent(color1) * ratio) + (Color.GetGreenComponent(color2) * inverseRatio);
             float b = (Color.GetBlueComponent(color1) * ratio) + (Color.GetBlueComponent(color2) * inverseRatio);
-            return Color.Rgb((int) r, (int) g, (int) b);
+            return Color.Rgb((int)r, (int)g, (int)b);
         }
         private class SimpleTabColorizer : SlidingTabScrollView.TabColorizer
         {

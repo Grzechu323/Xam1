@@ -58,7 +58,7 @@ namespace Xam1
             FillViewport = true;
             this.SetBackgroundColor(Android.Graphics.Color.Rgb(0xE5, 0xE5, 0xE5)); //Kolor szary
 
-            mTitleOffset = (int) (TITLE_OFFSET_DIPS * Resources.DisplayMetrics.Density);
+            mTitleOffset = (int)(TITLE_OFFSET_DIPS * Resources.DisplayMetrics.Density);
             mTabStrip = new SlidingTabStrip(context);
             this.AddView(mTabStrip, LayoutParams.MatchParent, LayoutParams.MatchParent);
         }
@@ -107,7 +107,7 @@ namespace Xam1
                 //Jeśli cokolwiek z tych warunków wystąpi, po prostu zwróć. Nie ma co przewijać.
                 return;
             }
-            mTabStrip.OnViewPagerPageChanged(e.Position,e.PositionOffset);
+            mTabStrip.OnViewPagerPageChanged(e.Position, e.PositionOffset);
             View selectedTitle = mTabStrip.GetChildAt(e.Position);
             int extraOffset = (selectedTitle != null ? (int)(e.Position * selectedTitle.Width) : 0);
             ScrollToTab(e.Position, extraOffset);
@@ -130,8 +130,8 @@ namespace Xam1
         {
             if (mScrollState == ViewPager.ScrollStateIdle) //idle = bezczynny
             {
-                mTabStrip.OnViewPagerPageChanged(e.Position,0f);
-                ScrollToTab(e.Position,0);
+                mTabStrip.OnViewPagerPageChanged(e.Position, 0f);
+                ScrollToTab(e.Position, 0);
             }
 
             if (mViewPagerPageChangeListener != null)
@@ -143,10 +143,10 @@ namespace Xam1
         private void PopulateTabStrip()
         {
             PagerAdapter adapter = mViewPager.Adapter;
-            for (int i=0; i<adapter.Count; i++)
+            for (int i = 0; i < adapter.Count; i++)
             {
                 TextView tabView = CreateDefaultTabView(Context);
-                tabView.Text = ((SlidingTabsFragment.SamplePagerAdapter) adapter).GetHeaderTitle(i);
+                tabView.Text = ((SlidingTabsFragment.SamplePagerAdapter)adapter).GetHeaderTitle(i);
                 tabView.SetTextColor(Android.Graphics.Color.Black);
                 tabView.Tag = i;
                 tabView.Click += tabView_Click;
@@ -156,8 +156,8 @@ namespace Xam1
 
         void tabView_Click(object sender, EventArgs e)
         {
-            TextView clickTab = (TextView) sender;
-            int pageToScrollTo = (int) clickTab.Tag;
+            TextView clickTab = (TextView)sender;
+            int pageToScrollTo = (int)clickTab.Tag;
             mViewPager.CurrentItem = pageToScrollTo;
         }
 
@@ -179,7 +179,7 @@ namespace Xam1
                 textView.SetAllCaps(true);
             }
             int padding = (int)(TAB_VIEW_PADDING_DIPS * Resources.DisplayMetrics.Density);
-            textView.SetPadding(padding,padding, padding, padding);
+            textView.SetPadding(padding, padding, padding, padding);
 
             return textView;
         }
@@ -209,7 +209,7 @@ namespace Xam1
                 {
                     scrollAmountX -= mTitleOffset;
                 }
-                this.ScrollTo(scrollAmountX,0);
+                this.ScrollTo(scrollAmountX, 0);
             }
         }
     }

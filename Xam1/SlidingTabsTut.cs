@@ -14,7 +14,7 @@ using Xam1.Fragments;
 namespace Xam1
 {
     [Activity(Label = "APKA", Theme = "@style/AppTheme", MainLauncher = false)]
-    public class SlidingTabsTut : Activity  
+    public class SlidingTabsTut : Activity
     {
         protected override void OnCreate(Bundle bundle)
         {
@@ -29,7 +29,7 @@ namespace Xam1
 
         public override bool OnCreateOptionsMenu(IMenu menu)
         {
-            MenuInflater.Inflate(Resource.Menu.actionbar_main,menu);
+            MenuInflater.Inflate(Resource.Menu.actionbar_main, menu);
             return base.OnCreateOptionsMenu(menu);
         }
     }
