@@ -97,7 +97,7 @@ namespace Xam1
             set
             {
                 mCustomTabColorizer = null;
-                mDefaultTabColorizer.IndicatorColors = value;
+                mDefaultTabColorizer.DividerColors = value;
                 this.Invalidate();
             }
         }
@@ -120,8 +120,7 @@ namespace Xam1
             int height = Height;
             int tabCount = ChildCount;
             int dividerHeightPx = (int) (Math.Min(Math.Max(0f, mDividerHeight), 1f) * height);
-            SlidingTabScrollView.TabColorizer tabColorizer =
-                mCustomTabColorizer != null ? mCustomTabColorizer : mDefaultTabColorizer;
+            SlidingTabScrollView.TabColorizer tabColorizer = mCustomTabColorizer != null ? mCustomTabColorizer : mDefaultTabColorizer;
             //Grube podkreślenie pod obecnym fragmentem
             if (tabCount > 0)
             {

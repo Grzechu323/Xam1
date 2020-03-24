@@ -99,7 +99,7 @@ namespace Xam1
             }
         }
 
-        private void value_PageScrolled(object sender, ViewPager.PageScrolledEventArgs e)
+        void value_PageScrolled(object sender, ViewPager.PageScrolledEventArgs e)
         {
             int tabCount = mTabStrip.ChildCount;
             if (tabCount == 0 || (e.Position < 0) || (e.Position) >= tabCount)
@@ -117,7 +117,7 @@ namespace Xam1
             }
         }
 
-        private void value_PageScrollStateChanged(object sender, ViewPager.PageScrollStateChangedEventArgs e)
+        void value_PageScrollStateChanged(object sender, ViewPager.PageScrollStateChangedEventArgs e)
         {
             mScrollState = e.State;
             if (mViewPagerPageChangeListener != null)
@@ -154,7 +154,7 @@ namespace Xam1
             }
         }
 
-        private void tabView_Click(object sender, EventArgs e)
+        void tabView_Click(object sender, EventArgs e)
         {
             TextView clickTab = (TextView) sender;
             int pageToScrollTo = (int) clickTab.Tag;

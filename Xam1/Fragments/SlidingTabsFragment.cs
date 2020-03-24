@@ -43,7 +43,7 @@ namespace Xam1.Fragments
                 items.Add("Biurka");
                 items.Add("Szafy");
                 items.Add("Kurwa");
-                items.Add("Reklamacje xD");
+                items.Add("Reklamacje");
                 items.Add("Kredens");
                 items.Add("Twój stary");
             }
@@ -71,9 +71,9 @@ namespace Xam1.Fragments
             {
                 return items[position];
             }
-            public override void DestroyItem(ViewGroup container, int position, Object @object)
+            public override void DestroyItem(ViewGroup container, int position, Java.Lang.Object obj)
             {
-                container.RemoveView((View)@object);
+                container.RemoveView((View)obj);
             }
         }
     }
