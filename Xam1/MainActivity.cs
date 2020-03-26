@@ -18,6 +18,7 @@ namespace Xam1
         private Button elo;
         private Button obrazky;
         private Button login;
+        private Button gallery;
         private Button test;
         private CheckBox ckb1;
         private TextView txt1;
@@ -44,6 +45,7 @@ namespace Xam1
             test.Click += Test_Click;
             mListView.ItemClick += mListView_ItemClick;
             mListView.ItemLongClick += mListView_ItemLongClick;
+            gallery.Click += Gallery_Click;
         }
 
         private void ComponentsLocalizer()
@@ -51,6 +53,7 @@ namespace Xam1
             elo = FindViewById<Button>(Resource.Id.elo);
             obrazky = FindViewById<Button>(Resource.Id.obrazky);
             login = FindViewById<Button>(Resource.Id.login);
+            gallery = FindViewById<Button>(Resource.Id.gallery);
             test = FindViewById<Button>(Resource.Id.test);
             ckb1 = FindViewById<CheckBox>(Resource.Id.checkBox1);
             txt1 = FindViewById<TextView>(Resource.Id.stan);
@@ -88,6 +91,11 @@ namespace Xam1
             StartActivity(typeof(Fragment3));
         }
 
+        private void Gallery_Click(object sender, EventArgs e)
+        {
+            Finish();
+            StartActivity(typeof(AddPictFromGallery));
+        }
         private void Test_Click(object sender, EventArgs e)
         {
             Finish();

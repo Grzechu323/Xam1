@@ -28,10 +28,16 @@
         android:layout_below="@id/elo"
         android:id="@+id/obrazky" />
     <Button
+      android:text="Galeria Picker"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_below="@id/obrazky"
+      android:id="@+id/gallery" />
+    <Button
         android:text="test"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/obrazky"
+        android:layout_below="@id/gallery"
         android:id="@+id/test" />
     <Button
       android:text="LOGIN"
