@@ -13,4 +13,7 @@
   <string name="ApplicationName">APKA</string>
   <string name="sample_show_log">Show Log</string>
   <string name="sample_hide_log">Hide Log</string>
+  <string name="btnSuc1">btn1</string>
+  <string name="btnSuc2">btn2</string>
+  <string name="btnSuc3">btn3</string>
 </resources>

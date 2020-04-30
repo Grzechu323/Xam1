@@ -15,7 +15,7 @@ using Android.Widget;
 
 namespace Xam1
 {
-    [Activity(Label = "APKA", Theme = "@style/AppTheme", MainLauncher = true)]
+    [Activity(Label = "APKA", Theme = "@style/AppTheme", MainLauncher = false)]
     public class Fragment2 : AppCompatActivity
     {
         protected override void OnCreate(Bundle savedInstanceState)
