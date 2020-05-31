@@ -24,13 +24,14 @@ namespace Xam1
         private TextView txt1;
         private List<Person> mItems;
         private ListView mListView;
+        private TextView furniture;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.activity_main);
-
+            furniture.Text = Intent.GetStringExtra("Furniture");
             ComponentsLocalizer();
             ActionHooker();
             ListView();
@@ -58,6 +59,7 @@ namespace Xam1
             ckb1 = FindViewById<CheckBox>(Resource.Id.checkBox1);
             txt1 = FindViewById<TextView>(Resource.Id.stan);
             mListView = FindViewById<ListView>(Resource.Id.listView1);
+            furniture = FindViewById<TextView>(Resource.Id.furnitureStr);
         }
 
         private void ListView()

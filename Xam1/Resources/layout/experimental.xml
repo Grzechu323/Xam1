@@ -1,19 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:local="http://schemas.android.com/apk/res-auto"
                 android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-  <RelativeLayout
-      android:padding="16dp"
-      android:layout_width="fill_parent"
-      android:layout_height="wrap_content">
-    <GridView
-        android:id="@+id/grid_view_image_text"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:columnWidth="110dp"
-        android:gravity="center"
-        android:numColumns="auto_fit"/>
-  </RelativeLayout>
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+	<ImageView
+		android:src="@android:drawable/ic_menu_gallery"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="10px"
+		android:layout_marginLeft="10px"
+		android:layout_alignParentLeft="true"
+		android:layout_alignParentTop="true"
+		android:minWidth="150dp"
+		android:minHeight="150dp"
+		android:id="@+id/offerPic" />
+	<Button
+		android:text="zdjecie z aparatu"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignParentRight="true"
+		android:layout_alignParentTop="true"
+		android:layout_marginTop="40px"
+		android:layout_marginRight="20px"
+		android:id="@+id/photoMake" />
+	<Button
+		android:text="zdjecie z galerii"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignParentRight="true"
+		android:layout_marginRight="20px"
+		android:layout_below="@id/photoMake"
+		android:id="@+id/picSelect" />
+	<EditText
+		android:hint="opis"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_below="@id/offerPic"
+		android:id="@+id/promoDesc" />
+	<Button
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:text="dodaj"
+		android:layout_below="@id/promoDesc"
+		android:id="@+id/btnAddPromo"/>
 </RelativeLayout>

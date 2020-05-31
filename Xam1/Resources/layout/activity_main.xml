@@ -67,5 +67,10 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/stan"
         android:id="@+id/listView1" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/furnitureStr"
+        android:layout_below="@id/listView1"/>
 
 </RelativeLayout>

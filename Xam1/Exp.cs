@@ -24,45 +24,36 @@ namespace Xam1
     [Activity(Label = "APKA", Theme = "@style/AppTheme", MainLauncher = true)]
     public class Exp : AppCompatActivity
     {
-        private GridView gridView;
-
-        private string[] gridViewString =
-        {
-            "ikona1", "ikona2", "ikona3", "ikona4", "ikona5", "ikona6"
-        };
-
-        private int[] imageId =
-        {
-            Resource.Drawable.icon1, Resource.Drawable.icon2, Resource.Drawable.icon3, Resource.Drawable.icon4,
-            Resource.Drawable.icon5, Resource.Drawable.icon6
-        };
+        private string furnitureId;
+        private TextView furnitureString;
+        private Button nxt;
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
             SetContentView(Resource.Layout.experimental);
-            //var toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
-            //SetSupportActionBar(toolbar);
-            //SupportActionBar.Title = "Custom Grid View";
-            CustomGridViewAdapter adapter = new CustomGridViewAdapter(this, gridViewString, imageId);
-            gridView = FindViewById<GridView>(Resource.Id.grid_view_image_text);
-            gridView.Adapter = adapter;
-            gridView.ItemClick += (s, e) =>
-            {
-                Toast.MakeText(this, "GridView Item: " + gridViewString[e.Position], ToastLength.Short).Show();
-            };
             ComponentsLocalizer();
             ActionHooker();
         }
 
         private void ActionHooker()
         {
-            
+            //nxt.Click += nxt_Click;
         }
 
         private void ComponentsLocalizer()
         {
-            
+            //furnitureString = FindViewById<TextView>(Resource.Id.furnitureString);
+            //nxt = FindViewById<Button>(Resource.Id.next);
         }
+
+        /*private void nxt_Click(object sender, EventArgs e)
+        {
+            Intent intent = new Intent(this, typeof(MainActivity));
+            intent.PutExtra("Furniture", furnitureId);
+            this.StartActivity(intent);
+            Finish();
+            StartActivity(typeof(MainActivity));
+        }*/
 
     }
 }
